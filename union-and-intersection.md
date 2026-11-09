@@ -1,52 +1,44 @@
-## Type vs Interface in TypeScript
+# Union and Intersection Types in TypeScript
 
-# Introduction
-In TypeScript, the type and interface ase used to define data structures. Although they look similar, but they have some defferences.
+### Introduction
 
-# Explaination with code
+A Union Type allows a variable to hold one of saveral specified types, but an Intersection Type combines multiple types into one. Both are important for type definations and more flexible.
 
-An Interface is mainly used to define the structure of an objects. It specifics that which properties and methods must contains.
+### Explainatoin with code
+
+A Union Type uses the pipe (|) operator. It allows a value to be one of multiple types.
 
 ```ts
-interface Employee{
-    name:string,
-    salary: number
-}
+type Id = number | string;
+
+let userID = Id;
+userId = 4742;
+userId = "Asr4742"
 ```
 
-A Type can also define object structures, but it supports additonal types like unions, primitives, tuple and also function types.
+An Intersection Type uses the ampersand (&) operator. it combines multiple types into a single type containing all their requiered properties.
 
 ```ts
-type Employee ={
-    name:string,
-    salary:number
-}
-
-type Status = "pending" | "success";
-```
-
-
-Interfaces can use extends but type commonly use intersection operator.
-
-```ts
-interface User{
-    name: string
-}
-interface Employee extends User{
-    salary: number;
-    isActive: boolean
-}
-
-
 type User = {
-    name: string;
-};
+    name:string
+}
 
-type Employee = User & {
-    salary: number
+type Employee={
+    salary : number
+}
+
+type Member = User & Employee;
+
+const member:Member={
+    name:"Rahat",
+    salary:20000,
 }
 ```
-# Conclusion
 
-Both type and interface is most important features of TypeScript. Choose any of them as your requirements.
+The main differenc is that Union means OR , Intersection means AND.
 
+### Conclution
+
+Union Types are useful when a value can be on of sevaral types, and Intersection Type are usefull when combining multiple object structures.
+Use Union when you need to set multiple types on a value.
+use Intersection when you want to combining multiple object structure.

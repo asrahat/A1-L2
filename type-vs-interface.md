@@ -1,9 +1,9 @@
-## Type vs Interface in TypeScript
+# Type vs Interface in TypeScript
 
-# Introduction
+### Introduction
 In TypeScript, the type and interface ase used to define data structures. Although they look similar, but they have some defferences.
 
-# Explaination with code
+### Explaination with code
 
 An Interface is mainly used to define the structure of an objects. It specifics that which properties and methods must contains.
 
@@ -46,7 +46,7 @@ type Employee = User & {
     salary: number
 }
 ```
-# Conclusion
+### Conclusion
 
 Both type and interface is most important features of TypeScript. Choose any of them as your requirements.
 
